@@ -7,36 +7,51 @@
     <link rel="stylesheet" href="./all-css/style.css" />
   </head>
   <body>
+    <img src="./pictures/stars-background.jpg" alt="background" />
     <div class="container">
-      <div class="logo">
-        <img src="../pictures/logo.PNG" alt="logo of zipory land" />
-      </div>
+      <img src="./pictures/logo.png" alt="logo" class="logo" />
       <div class="header">
-        <h1>Welcom to my gaming place</h1>
-        <h2>The fun start here</h2>
+        <h1>The fun starts here</h1>
       </div>
       <div id="all-fields">
         <fieldset class="field1">
-          <button type="button" id="button-registered">
-            enter with your password
-          </button>
+          <button type="button" id="button-registered">registered user</button>
+          or
           <button type="button" id="button-new-account">
-            creat a new user account
+            creat a new user
           </button>
         </fieldset>
 
         <form action="" class="field3">
           <fieldset>
             <legend>new account</legend>
-            <label for="first-name">Enter your first name:</label>
-            <input type="text" name="first-name" id="firstName" required />
-            <label for="last-name">Enter your last name:</label>
-            <input type="text" name="last-name" id="lastName" required />
-            <label for="age">Enter your age:</label>
-            <input type="tel" name="age" id="age" required />
-            <label for="email">Enter your email:</label>
-            <input type="email" name="email" id="email" required />
-            <label for="password">Enter your password:</label>
+            <label for="firstName" class="poiter">first name:</label>
+            <input
+              type="text"
+              name="first-name"
+              id="firstName"
+              class="poiter"
+              required
+            />
+            <label for="lastName" class="poiter">last name:</label>
+            <input
+              type="text"
+              name="last-name"
+              id="lastName"
+              class="poiter"
+              required
+            />
+            <label for="age" class="poiter">age:</label>
+            <input type="tel" name="age" id="age" class="poiter" required />
+            <label for="email" class="poiter">email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="poiter"
+              required
+            />
+            <label for="password" class="poiter">password:</label>
             <input
               type="password"
               name="password"
@@ -44,11 +59,23 @@
               required
               minlength="4"
               placeholder="min 4 signs"
+              class="poiter"
             />
-            <label for="verify">Verify your password:</label>
-            <input type="password" name="verify" id="verify" required />
+            <label for="verify" class="poiter">Verify password:</label>
+            <input
+              type="password"
+              name="verify"
+              id="verify"
+              class="poiter"
+              required
+            />
             <div class="submit">
-              <input type="submit" value="submit" class="submit-new-user" />
+              <input
+                type="submit"
+                value="Login"
+                class="submit-new-user"
+                class="poiter"
+              />
             </div>
           </fieldset>
         </form>
@@ -56,7 +83,7 @@
         <form action="" class="field2">
           <fieldset>
             <legend>registered user</legend>
-            <label for="field2">your email:</label>
+            <label for="field2">email:</label>
             <input type="email" name="field2" id="email" required />
             <label for="password">password:</label>
             <input
@@ -67,7 +94,7 @@
               minlength="4"
             />
             <div class="submit">
-              <input type="submit" value="submit" class="submit-registred" />
+              <input type="submit" value="Login" class="submit-registred" />
             </div>
           </fieldset>
         </form>

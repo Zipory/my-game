@@ -3,19 +3,49 @@
   margin: 0;
   padding: 0;
 }
+
+/* body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  opacity: 0.9;
+} */
+.logo {
+  width: 200px;
+  height: auto;
+}
+.poiter {
+  cursor: pointer;
+}
+
 .container {
+  position: absolute;
+  top: 50px;
+  left: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: blanchedalmond;
+  background-color: #7bc9ff;
+  padding: 5px;
 }
+
+#button-registered {
+  background-color: white;
+  border-radius: 10px;
+}
+
+#button-new-account {
+  background-color: white;
+  border-radius: 10px;
+}
+
 #all-fields,
 form {
   width: 300px;
   height: 420px;
   font-size: larger;
-  background-color: silver;
+  /* background-color: silver; */
 }
 fieldset button {
   font-size: 35px;

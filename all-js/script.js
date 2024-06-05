@@ -1,7 +1,13 @@
 "use strict";
+
+localStorage.removeItem("currentUser");
+
 let field1 = document.querySelector(".field1");
 let field2 = document.querySelector(".field2");
 let field3 = document.querySelector(".field3");
+/*------------------------------------------------------------ */
+
+/*------------------------------------------------------------ */
 let buttonRegistered = document.querySelector("#button-registered");
 let buttonNewAccount = document.querySelector("#button-new-account");
 let submitNewUser = document.querySelector(".submit-new-user");
@@ -19,7 +25,6 @@ let arrContent = {
 let worning = document.createElement("p");
 // let strLocalStorage = JSON.stringify(counterLocalStorage);
 // localStorage.setItem("0", strLocalStorage);
-
 buttonRegistered.addEventListener("click", clickRegistered);
 buttonNewAccount.addEventListener("click", clickNewAccount);
 field2.addEventListener("input", creatUser);
@@ -69,11 +74,12 @@ function creatNewUser(event) {
       worning.innerText = "the password it too short";
     } else {
       if (checkLocalStorage()) {
-        worning.innerText = "the email is already used.";
+        worning.innerText = "that email is already used.";
       } else {
         worning.innerText = "";
         let profileStr = JSON.stringify(arrContent);
         localStorage.setItem(`${arrContent["email"]}`, profileStr);
+        localStorage.setItem("currentUser", profileStr);
         window.location.href = "/all-html/second-page.html";
       }
     }
@@ -96,6 +102,7 @@ function checkRegistredUser(event) {
       worning.innerText = "wrong password.\n\n try again.";
     } else {
       worning.innerText = "";
+      localStorage.setItem("currentUser", user);
       window.location.href = "/all-html/second-page.html";
     }
   }

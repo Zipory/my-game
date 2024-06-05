@@ -1,5 +1,9 @@
 "use strict";
-
+/*--------------------verify user------------------------------------- */
+let user = localStorage.getItem("currentUser");
+if (!user) {
+  window.location.href = "/index.html";
+}
 /*--------------------starter------------------------------------- */
 let theGame = document.querySelector(".game");
 let startButton = document.querySelector(".start-button");
@@ -15,7 +19,6 @@ function startTheGame() {
   theGame.style.display = "flex";
 }
 
-/*--------------------------------------------------------- */
 /*--------------------------the game------------------------------- */
 let theBoard = document.querySelector(".board");
 let theRow = 15;

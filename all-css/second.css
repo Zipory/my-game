@@ -8,10 +8,28 @@ body {
   margin-top: 10px;
 }
 .code {
-  border: 4px solid blue;
-  margin-top: 20px;
+  border: 4px solid black;
+  margin: 20px;
+  background-color: white;
+}
+.logo {
+  width: 200px;
+  height: auto;
+}
+.container {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  background-color: #7bc9ff;
+  text-align: center;
 }
 
-.header h1 { 
-    alin
+.point {
+  background-color: bisque;
+  border-radius: 50%;
+  padding: 30px;
+}
+#point {
+  display: flex;
+  justify-content: center;
 }

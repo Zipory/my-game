@@ -14,13 +14,19 @@ body {
   text-align: center;
   line-height: 30px;
 }
+.logo {
+  margin: 20px;
+}
+.underline {
+  text-decoration: underline;
+}
 
 .instruction {
   border-bottom: 2px dotted black;
 }
 .start-button {
-  width: 150px;
-  height: 30px;
+  width: 200px;
+  height: 40px;
   margin-top: 20px;
   border-radius: 10px;
   font-size: larger;
