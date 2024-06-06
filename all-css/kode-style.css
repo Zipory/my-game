@@ -24,6 +24,9 @@ body {
   line-height: normal;
   cursor: pointer;
 }
+.point:hover {
+  line-height: 23px;
+}
 #point {
   display: flex;
   justify-content: center;
@@ -52,6 +55,9 @@ body {
   background-color: cornflowerblue;
   cursor: pointer;
   color: aliceblue;
+}
+.start-button:hover {
+  background-color: rgb(67, 110, 189);
 }
 .game {
   display: none;
@@ -122,11 +128,19 @@ body {
   padding: 3px;
   cursor: pointer;
 }
+.logout:hover {
+  background-color: #c73659;
+  color: white;
+}
 .goback {
   border: 2px solid black;
   border-radius: 10px;
   padding: 3px;
   cursor: pointer;
+}
+.goback:hover {
+  background-color: black;
+  color: white;
 }
 .game-over {
   display: none;

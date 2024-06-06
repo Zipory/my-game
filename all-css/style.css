@@ -33,12 +33,18 @@ html {
   background-color: white;
   border-radius: 10px;
 }
-
+#button-registered:hover {
+  background-color: rgb(2, 1, 1);
+  color: white;
+}
 #button-new-account {
   background-color: white;
   border-radius: 10px;
 }
-
+#button-new-account:hover {
+  background-color: black;
+  color: white;
+}
 #all-fields,
 form {
   width: 300px;
@@ -49,6 +55,37 @@ fieldset button {
   font-size: 35px;
   width: 100%;
   margin-top: 15px;
+}
+
+.submit-new-user {
+  cursor: pointer;
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: larger;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.submit-new-user:hover {
+  background-color: rgb(67, 110, 189);
+}
+
+.submit-registred {
+  cursor: pointer;
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: larger;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color: aliceblue;
+}
+.submit-registred:hover {
+  background-color: rgb(67, 110, 189);
 }
 button:hover {
   cursor: pointer;

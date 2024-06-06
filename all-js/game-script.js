@@ -1,4 +1,5 @@
 "use strict";
+
 /*--------------------verify user------------------------------------- */
 let userStr = localStorage.getItem("currentUser");
 if (!userStr) {
@@ -11,21 +12,26 @@ let pointDiv = document.querySelector("#point");
 pointName.classList.add("point");
 pointName.innerText = shortName;
 pointDiv.append(pointName);
-/*-------------------------score------------------------------------- */
 
+/*-------------------------score && couter----------------------- */
 let score = user["score"] ? user["score"] : 0;
 let counter = user["counter"] ? user["counter"] : 0;
-/*--------------------starter------------------------------------- */
+
+/*--------------------creat alements------------------------------------- */
 let theGame = document.querySelector(".game");
 let startButton = document.querySelector(".start-button");
 let textStart = document.querySelector(".starter");
 let colection = document.querySelector(".colection");
 let mission = document.querySelector(".mission");
 let textGameOver = document.querySelector(".game-over");
+let textVictory = document.querySelector(".victory");
 let nickName = document.querySelector("#nikeName");
 let scorePlace = document.querySelector("#score");
 let arrGoback = document.querySelectorAll(".goback");
 let logout = document.querySelector(".logout");
+let replay = document.querySelector(".replay");
+
+/*--------------------starter------------------------------------- */
 startButton.addEventListener("click", startTheGame);
 
 function startTheGame() {
@@ -47,7 +53,7 @@ function logOutFunc() {
   window.location.reload();
 }
 
-/*--------------------------the game------------------------------- */
+/*--------------------------creat the game----------------------------- */
 let theBoard = document.querySelector(".board");
 let theRow = 15;
 let theColumn = 15;
@@ -63,7 +69,7 @@ for (let i = 0; i < theRow; i++) {
   }
 }
 
-/*------------------------------the player-----------------------------------*/
+/*---------------------------the player---------------------------------*/
 let player = document.createElement("img");
 player.setAttribute("src", "../pictures/rabi.png");
 
@@ -139,6 +145,7 @@ function onTheBoard() {
     arrBoxes[x_y[0]][x_y[1]].append(i);
   }
 }
+
 /*---------------------------text missions------------------------------ */
 let arrMissions = [];
 arrMissions.push(`first you need stop smoking !!!`);
@@ -185,6 +192,11 @@ function gameOver(box) {
     for (let i of node) {
       if (arrEvents.includes(i)) {
         console.log("game over");
+        textGameOver.style.display = "block";
+        user.counter = 0;
+        userStr = JSON.stringify(user);
+        localStorage.setItem(`${user["email"]}`, userStr);
+        localStorage.setItem("currentUser", userStr);
         document.removeEventListener("keyup", move);
       }
     }
@@ -208,14 +220,17 @@ function levelUp(box) {
         document.removeEventListener("keyup", move);
         colection.append(arrGoods[counter]);
         counter++;
+        user.counter = counter;
         if (counter < arrGoods.length) {
           x = 0;
           y = 0;
           setTimeout(gameInLoop, 2000);
         } else {
           /*------------------ if the game finished-------------------------------*/
+          textVictory.style.display = "block";
           score++;
           user.score = score;
+          user.counter = 0;
           userStr = JSON.stringify(user);
           localStorage.setItem(`${user["email"]}`, userStr);
           localStorage.setItem("currentUser", userStr);
@@ -225,8 +240,28 @@ function levelUp(box) {
   }
 }
 console.log();
+/*---------------------------to input the goods auto to the colection-------------------------------- */
+function inputColection() {
+  for (let i = 0; i < counter; i++) {
+    colection.append(arrGoods[i]);
+  }
+}
+
+/*----------------------------play again--------------------------------- */
+replay.addEventListener("click", playAgain);
+
+function playAgain() {
+  location.reload();
+}
+
 /*-------------------------loop of the game---------------------------------- */
 function gameInLoop() {
+  if (counter) {
+    inputColection();
+  }
+  userStr = JSON.stringify(user);
+  localStorage.setItem(`${user["email"]}`, userStr);
+  localStorage.setItem("currentUser", userStr);
   mission.innerText = `Level ${counter + 1}: ${arrMissions[counter]}`;
   onTheBoard();
   goodOnTHeBoard(counter);
