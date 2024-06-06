@@ -18,13 +18,13 @@ let arrContent = {
     lastName: null,
     age: null,
     email: null,
-    password: null,*/
+    password: null,
+    score: null
+    */
 };
-// let password1 = document.querySelector("#password").value;
-// let password2 = document.querySelector("#verify").value;
+
 let worning = document.createElement("p");
-// let strLocalStorage = JSON.stringify(counterLocalStorage);
-// localStorage.setItem("0", strLocalStorage);
+
 buttonRegistered.addEventListener("click", clickRegistered);
 buttonNewAccount.addEventListener("click", clickNewAccount);
 field2.addEventListener("input", creatUser);
@@ -52,7 +52,7 @@ function checkCorectPassword() {
   let password2 = document.querySelector("#verify").value;
   if (password1 !== password2) {
     worning.innerText = "The verify is not correct!!";
-    // field3.append(worning);
+
     return false;
   } else {
     worning.innerText = "";
@@ -70,7 +70,7 @@ function creatUser(event) {
 function creatNewUser(event) {
   event.preventDefault();
   if (checkCorectPassword()) {
-    if (arrContent["password"].length < 4) {
+    if (arrContent["password"].length < 6) {
       worning.innerText = "the password it too short";
     } else {
       if (checkLocalStorage()) {

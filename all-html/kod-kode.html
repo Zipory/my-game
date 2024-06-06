@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KOD KODE</title>
+    <link rel="stylesheet" href="../all-css/normalize.css" />
     <link rel="stylesheet" href="../all-css/kode-style.css" />
   </head>
   <body>
     <div class="starter">
-      <img
-        src="../pictures/logo_kodkode.png"
-        alt="logo of kod kode"
-        class="logo"
-      />
-      <!-- <h1>welcom to KOD KODE game:</h1> -->
+      <div id="point">
+        <div class="goback">Goback</div>
+        <img
+          src="../pictures/logo_kodkode.png"
+          alt="logo of kod kode"
+          class="logo"
+        />
+      </div>
       <h2>
         The best place to be <span class="underline">at such times</span>:
       </h2>
@@ -34,13 +37,26 @@
         <button type="button" class="start-button">start the game</button>
       </section>
     </div>
+
     <div class="game">
-      <div class="mission"></div>
+      <div class="header">
+        <div class="goback">Goback</div>
+        <div id="score" class="underline"></div>
+        <div class="mission"></div>
+        <div id="nikeName"></div>
+      </div>
+
       <div class="board"></div>
       <div class="colection"></div>
     </div>
     <div class="game-over">
       <h1>game over</h1>
+    </div>
+    <div class="victory">
+      <h1>victory</h1>
+    </div>
+    <div class="log">
+      <div class="logout">Logout</div>
     </div>
     <script src="../all-js/game-script.js"></script>
   </body>
