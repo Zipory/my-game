@@ -166,3 +166,18 @@ body {
   border-radius: 10px;
   border: 5px solid black;
 }
+
+.replay {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: large;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.replay:hover {
+  background-color: rgb(67, 110, 189);
+}

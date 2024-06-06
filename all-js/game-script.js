@@ -29,7 +29,7 @@ let nickName = document.querySelector("#nikeName");
 let scorePlace = document.querySelector("#score");
 let arrGoback = document.querySelectorAll(".goback");
 let logout = document.querySelector(".logout");
-let replay = document.querySelector(".replay");
+let replay = document.querySelectorAll(".replay");
 
 /*--------------------starter------------------------------------- */
 startButton.addEventListener("click", startTheGame);
@@ -248,7 +248,9 @@ function inputColection() {
 }
 
 /*----------------------------play again--------------------------------- */
-replay.addEventListener("click", playAgain);
+replay.forEach((element) => {
+  element.addEventListener("click", playAgain);
+});
 
 function playAgain() {
   location.reload();
