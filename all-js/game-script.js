@@ -72,7 +72,7 @@ for (let i = 0; i < theRow; i++) {
 /*---------------------------the player---------------------------------*/
 let player = document.createElement("img");
 player.setAttribute("src", "../pictures/rabi.png");
-
+player.classList.add("player");
 let y = 0;
 let x = 0;
 scorePlace.innerText = `score: ${score}`;

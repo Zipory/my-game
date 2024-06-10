@@ -38,6 +38,8 @@
               id="firstName"
               class="poiter"
               required
+              pattern="([a-zA-Z]+)"
+              placeholder="only letters"
             />
             <label for="lastName" class="poiter">last name:</label>
             <input
@@ -46,9 +48,19 @@
               id="lastName"
               class="poiter"
               required
+              pattern="([a-zA-Z]+)"
+              placeholder="only letters"
             />
             <label for="age" class="poiter">age:</label>
-            <input type="tel" name="age" id="age" class="poiter" required />
+            <input
+              type="tel"
+              name="age"
+              id="age"
+              class="poiter"
+              required
+              pattern="[0-9]+"
+              title="only numbers"
+            />
             <label for="email" class="poiter">email:</label>
             <input
               type="email"
@@ -64,7 +76,9 @@
               id="password"
               required
               minlength="6"
-              placeholder="min 6 signs"
+              placeholder="min 6 characters"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!,@,#,$,%,^,&,*]).{6,}"
+              title="6 characters, one number, one uppercase, one lowercase and one signs."
               class="poiter"
             />
             <label for="verify" class="poiter">Verify password:</label>

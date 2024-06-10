@@ -13,6 +13,7 @@ let buttonNewAccount = document.querySelector("#button-new-account");
 let submitNewUser = document.querySelector(".submit-new-user");
 let submitRegistered = document.querySelector(".submit-registred");
 let inputVerify = document.querySelector("#verify");
+let worning = document.createElement("p");
 let arrContent = {
   /* firstName: null,
     lastName: null,
@@ -23,8 +24,7 @@ let arrContent = {
     */
 };
 
-let worning = document.createElement("p");
-
+/*----------------------------Listeners------------------------------------- */
 buttonRegistered.addEventListener("click", clickRegistered);
 buttonNewAccount.addEventListener("click", clickNewAccount);
 field2.addEventListener("input", creatUser);
@@ -66,9 +66,16 @@ function creatUser(event) {
   arrContent[choose] = event.target.value;
 }
 
-// replacing the submit default propertis.
+/*
+ * --------------- replacing the submit default propertis.-----------
+ * there is two strong functions:
+ * 1) is the preventDefault() : (on elements) that not alaude the auto of a function, like the button of the form to reload the page.
+ * 2) is the reportValidity() : (on functions) that check if the order inside the function is true, like checing the attributs in the form.
+ */
 function creatNewUser(event) {
-  event.preventDefault();
+  if (field3.reportValidity()) {
+    event.preventDefault();
+  }
   if (checkCorectPassword()) {
     if (arrContent["password"].length < 6) {
       worning.innerText = "the password it too short";
